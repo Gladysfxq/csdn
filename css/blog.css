@@ -1,0 +1,165 @@
+body,html{
+	font-size: 62.5%
+}
+html,body,span,img,p,ul,li,a{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #fff;
+	font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Roboto,Noto,Helvetica Neue,sans-serif;
+}
+ul {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+div{
+	display: block;
+}
+.clearfix::after{
+	display: block;
+	clear: both;
+	content: "";
+	height: 0
+}
+.csn-bar{
+	font-size: 1.2rem;
+    font-family: 'PingFang SC','Microsoft YaHei',SimHei,Arial,SimSun;
+    color: #333;
+    line-height: 5rem;
+    box-shadow: 0 0.1rem 0.2rem 0 rgba(0,0,0,.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.4rem 1.6rem;
+    height: 10rem;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+}
+.left-one{
+	width: 67%;
+    height: 10rem;
+    position: relative;
+}
+.bar-left{
+	float: left;
+}
+.photo img{
+	display: block;
+	width: 15rem;
+	height: 10rem;
+	background-size: 100%;
+	z-index: 99;
+}
+.logo {
+    background-image: url(../image/b.png);
+    background-repeat: no-repeat;
+    width: 20rem;
+    height: 10rem;
+    position: absolute;
+    top: 2rem;
+    left: 50rem;
+    background-size: 100%;
+}
+.bar-right{
+	float: right;
+}
+.clearfix::before{
+	content: " ";
+    display: table;
+}
+.search img{
+     width: 15rem;
+     height: 8rem;
+     margin: 1rem 4rem;
+}
+.delv{
+	font-size: 3.5rem;
+    color: #C92027;
+    position: absolute;
+    right: 9rem;
+    top: 4rem;
+ }
+ .nav{
+ 	position: absolute;
+ 	top: 12rem;
+    width: 100%;
+    height: 12rem;
+    line-height: 12rem;
+    background: #ebebeb;
+    overflow: hidden;
+ }
+ .list{
+ 	padding-left: 3rem;
+ }
+.list .active{
+	float: left;
+	display: block;
+    margin-right: 4.5rem;
+    height: 100%;
+    line-height: 12rem;
+    font-size: 4rem;
+    color: #4f4f4f;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.midden{
+	width: 100%;
+	position: absolute;
+	top: 25rem;
+}
+.midden .good{
+	display: block;
+	width: 100%;
+	/*height: ;*/
+}
+.midden .good>img {
+	width: 100%;
+	height: auto;
+}
+.bottom{
+	width: 100%
+}
+.feed-list .list1{
+	position: relative;
+    padding: 1.24rem 6.32rem 1.08rem;
+    border-bottom: 1px solid #d8d8d8;
+}
+.feed-list h2{
+	font-size: 4rem;
+    line-height:4rem;
+    max-height: 4rem;
+    font-weight: bold;
+    overflow: hidden;
+}
+.feed-list .list2{
+	font-size: 2.5rem;
+	margin-top: 2rem;
+}
+.list2 .first{
+	color: #349edf;
+	position: absolute;
+	top: 12rem;
+}
+.list2 .second{
+	display: inline-block;
+	max-width: 16.6rem;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 8rem;
+}
+.list2 .three{
+	margin-left: 10rem;
+}
+.list2 .four{
+	color: #999;
+	margin-left: 4rem;
+}
+.list2 .button{
+	margin-left: 10rem;
+}

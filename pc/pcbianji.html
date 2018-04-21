@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文章管理</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/pcblog.css">
+</head>
+    <style type="text/css"></style>
+<body>
+     <div class="headnav">
+	     <div class="swtich-text">
+	          <span>对新版有任何意见或建议，请前往</span>
+	     </div>
+	 </div>
+	 <div class="head">
+		<div class="headone clearfix">
+	         <div class="leftnav floatL">
+	             <a href=""></a>
+	             <span>创作中心</span>
+	         </div>
+	         <div class="rightnav floatR">
+	             <a href="" class="btn">写博客</a>
+	         </div>
+		 </div>
+	</div>
+	<div class="mian clearfix" id="app">
+         <div class="sider floatL">
+             <div class="listitem">内容</div>
+             <ul class="clearfix">
+                 <li><a href="">写博客</a></li>
+                 <li><a href="./pcbianji.html">博客管理</a></li>
+             </ul>
+         </div>
+         <div class="nav">
+             <ul>
+                <li><a href="javascript: void()"></a></li>
+             </ul>
+         </div>
+		<ul id="blogList" class="pclist">
+			<li v-for="item in list">
+				<span>{{ item.title }}</span>   
+				<span>{{ item.date }}</span>   
+				<span>{{ item.read_num }}</span>   
+				<span>{{ item.classify_name }}</span>
+				<button @click="deleteBlog(item)">删除</button>
+				<button @click="reletBlog(item)">编辑</button>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var blogList = new Vue({
+			el: "#blogList",
+			data: {
+				list:[]
+			},
+			mounted: function(){
+				this.getList();
+			},
+			methods: {
+				getList: function(){
+					var userId = localStorage.getItem("user_id");
+					var that = this;
+					$.ajax({
+						url: " http://blog.com/api/blog/myBlog",
+						data: {
+							user_id: userId
+						},
+						type:"post",
+						dataType: "json",
+						success: function(res){
+							if(res.error_code == 0){
+								that.list = res.data.my_blog_lists
+							}else {
+								alert(res.message);
+							}
+						}
+					})
+				},
+				deleteBlog: function(item){
+					var that = this;
+
+					$.ajax({
+						url: "http://blog.com/api/blog/del",
+						data: {
+							user_id: localStorage.getItem("user_id"),
+							blog_id: item.id
+						},
+						type:"post",
+						dataType: "json",
+						success: function(res){
+							if(res.error_code == 0){
+								alert("删除成功");
+								that.list.forEach(function(i,index){
+									if(i.id == item.id){
+										that.list.splice(index,1)
+									}
+								})
+							}else {
+								alert(res.message);
+							}
+						}
+					})
+				},
+			    reletBlog: function(item){
+                     window.location.href ="./pcblog.html?id="+item.id;
+			    },
+			  
+
+			}
+		})
+	</script>
+</body>
+</html>

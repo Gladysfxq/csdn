@@ -1,0 +1,138 @@
+html,body{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+    font-size: 62.5%;
+}
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #333;
+}
+.clearfix::after{
+	display: block;
+	clear: both;
+	content: "";
+	height: 0
+}
+.main {
+    padding: 10rem 0 10rem 0;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+}
+.container {
+    padding-right: 20rem;
+    padding-left: 15rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.login-user{
+    background: #fefefe;
+    border: 1px solid #d5dce5;
+    border-radius: 2%;
+}
+.login-user h3{
+	margin: 0 auto;
+    font-size: 4.5rem;
+    font-weight: 100;
+    color: #4d5e73;
+    padding: 4rem 0rem 2rem 5rem;
+}
+.user-info{
+	margin: 0 auto;
+	padding-right: 5rem;
+    padding-left: 5rem;
+}
+.user-info .user-name, .user-info .password{
+	background: #fff;
+    width: 100%;
+    display: block;
+    padding: 2rem 0;
+    border: 1px solid #d5dce5;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    text-indent: 2.3rem;
+    outline: 0;
+    font-size: 4em;
+    border-radius: 5%;
+}
+.user-info .pass{
+	background: #fff;
+    width: 100%;
+    display: block;
+    padding: 2rem 0;
+    border: 1px solid #d5dce5;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    text-indent: 2.3rem;
+    outline: 0;
+    font-size: 4em;
+    border-radius: 5%;
+}
+label {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #4d5e73;
+    font-size: 2rem;
+}
+.word input{
+    margin-right: 2rem;
+    border: 1px solid #ccc;
+}
+.forget a{
+	color: #4d5e73;
+	font-size: 2rem;
+	text-decoration: none;
+}
+.forget{
+	float: right;
+}
+.logging {
+    background: #c90a16;
+    display: block;
+    height: 8rem;
+    line-height: 8rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 5em;
+    text-decoration: none;
+    clear: both;
+    width: 100%;
+    border: solid 1px #c90000;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #fff inset;
+}
+.main .line {
+    background: #eee;
+    height: 1px;
+    margin-top: 8rem;
+}
+.third{
+	padding: 3rem 2rem 5rem 5rem;
+}
+.third span{
+	display: block;
+    font-size: 4em;
+    color: #666;
+    margin-bottom: 3rem;
+}
+.third .qq{
+	display: inline-block;
+	background-image: url(../image/new.png);
+	background-repeat: no-repeat;
+    margin-right: 2rem;
+    width: 22rem;
+    height: 5rem;
+}
+.third .soon{
+   display: inline-block;
+   position: absolute;
+   left: 43rem;
+   top: 84rem;
+}
+.soon a{
+	 color: #2a6496;
+}

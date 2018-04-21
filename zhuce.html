@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>zhuce</title>
+	<link rel="stylesheet" type="text/css" href="./css/zhuce.css">
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+</head>
+<body>
+	 <div class="login-z">
+	     <div class="log_r">
+	         <a href="">登录</a>
+	     </div>
+	     <div class="login_c regist_c">
+				<div class="login_c_t">欢迎注册</div>
+				<div class="login_c_c regist_c_c">
+					<div class="regist_step">
+						<label class="step_orange"><span><i>1</i></span><em>注册码</em></label>
+						<strong></strong>
+						<label><span><i>2</i></span><em>用户名及密码</em></label>
+						<strong></strong>
+						<label><span><i>3</i></span><em>完成</em></label>
+					</div>
+					<div class="offical">
+						<h3>扫码或搜索关注公众号，回复手机号获取注册码</h3>
+						<div class="offical_c">
+							<div class="offical_c_l">
+								<img src="./image/coderlife.jpg">
+							</div>
+							<span>公众号ID:coder_life</span>
+						</div>
+					</div>
+					<div id="app">
+						<form id="PcForm" action="" method="post">
+							<div class="txt_wrap">
+							    <input type="text" placeholder="请输入用户名" class="txt_inpt " v-model="Usernewname">
+							    <P>{{ Usernewname }}</P> 
+							    <input type="text" placeholder="请输入电话号" class="txt_inpt " v-model="Usernewphone"> 
+								<input type="text" placeholder="请输入密码" class="txt_inpt" v-model="Usernewword"> 
+
+								<!-- <div class="veri_tips" style="display: block;">内容不能为空!</div>	 -->						
+							</div>
+							<input id="pcSec" accesskey="l" value="下一步" tabindex="6" type="button" class="next_btn next_step" v-on:click="getList">
+						</form>
+					</div>
+					<div class="check clause">
+						<span></span><em>我已仔细阅读并接受<a href="" target="_blank">CSDN用户服务条款</a></em>
+					</div>
+				</div>
+			</div>
+	 </div>
+	 <script src="./js/zhuce.js"></script>
+</body>
+</html>

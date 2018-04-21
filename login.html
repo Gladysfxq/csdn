@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<link rel="stylesheet" href="./css/login.css">
+	 <script src="./js/vue.js"></script>
+	 <script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+</head>
+<body>
+     <div id="app">
+		<div class="main">
+		     <div class="container">
+		         <div class="login-user">
+		             <h3>账号登录</h3>
+		             <div class="user-info" clearfix>
+		                 <input name="user-name" placeholder="输入用户名/邮箱/手机号" class="user-name" type="text" value="" v-model="userName">
+		                 <input  v-model="Newpass" class="password" placeholder="输入密码" type="password">
+		                 <span class="word">
+			                 <input type="checkbox" name="rememberMe" id="rememberMe" value="true" checked="checked" class="auto-login" tabindex="4">
+			                 <label for="rememberMe">下次自动登录</label>
+			             </span>
+		                 <span class="forget"><a href="javascript: void()">忘记密码</a></span>
+		                 <input v-on:click="getList" class="logging" accesskey="l" value="登 录" tabindex="6" type="button" >
+		             </div>
+		             <div class="line"></div>
+		             <div class="third">
+		                 <span>第三方账号登录</span>
+		                 <span>
+		                     <a class="qq" href="javascript:void()"></a>
+		                 </span>
+		                 <span>还没有scdn账号</span>
+		                 <span class="soon"><a href="./zhuce.html">立即注册</a></span>
+		             </div>
+		         </div>
+		     </div>
+		</div>
+	</div>
+</body>  
+    <script src="./js/login.js"></script>
+</html>

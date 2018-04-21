@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/info.css">
+</head> 
+ <body>
+	<div id="app">
+	     <div class="top-mod clearfix">
+	         <div class="mod1">
+	             <img src="./image/touxiang.jpg">
+	             <span>代码搬运工</span>
+	         </div>
+	         <div class="mod2">
+	             <a href="javascript: void()">关注</a>  
+ 	         </div>
+ 	         <div class="line"></div>
+	     </div>
+         <div >
+    	     <div class="done" v-for="item in list">  
+                 <h1 class="article">{{ item.title }}</h1>
+                 <div class="article_info clearfix">
+                 <!--     <span class="type"> {{ list.category_name }} </span> -->
+                     <span class="create_time">{{ item.data }}</span>
+                     <span class="read_num">{{ item.read_num }}</span>
+                 </div>
+             </div>
+         </div>
+	</div>
+</body>
+     <script type="text/javascript">
+         function getQuery(){
+                var str = (location.search.length > 0 ? location.search.substring(1) : ''),
+                args = {},
+                items = str.length ? str.split("&") : [],
+                item = null,
+                name = null,
+                value = null;
+                for (i=0; i < items.length; i++){
+                    item = items[i].split("=");
+                    name = decodeURIComponent(item[0]);
+                    value = decodeURIComponent(item[1]);
+                    if (name.length) {
+                        args[name] = value;
+                    }
+                }
+                return args;
+            }
+var app = new Vue({
+	el: "#app",
+	data: {
+		list: [],
+	},
+	mounted: function(){
+		this.getList();
+	},
+	methods: {
+		getList:function(){
+			var that = this;
+			$.ajax({
+				'url': 'http://blog.com/api/collect/lists',
+				'type': 'post',
+				'dataType': 'json',
+				'data': {
+				    user_id: localStorage.getItem("user_id"),
+				},
+				success: function(res){
+					that.list = res.data.blog_lists;
+			    },
+				error:function(res){
+				},
+			})
+		}
+	}
+})
+     </script>
+</html>
